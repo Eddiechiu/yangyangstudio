@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="旸旸画室">
+
+    <title>旸旸画室</title> 
+
+    <link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/header.css"></link>
+    <style>
+        div.title_color{
+            background-color: #159957;
+            background-image: linear-gradient(45deg, #336699, #159957);
+        } 
+    </style>
+</head>
+<body>
+    {% include 'nav_home.html' %}
+    {% include 'header_home.html' %}
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2500" data-pause="false">
+          <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <div class="carousel-inner">
+              <div class="active item">
+                  <img class="img-responsive center-block" src="/static/photos/house.jpg" alt="房子">
+              </div>
+              <div class="item">
+                  <img class="img-responsive center-block" src="/static/photos/table.jpg" alt="画画的桌子">
+              </div>
+              <div class="item">
+                  <img class="img-responsive center-block" src="/static/photos/xiangshui.jpg" alt="香水瓶">
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="static/js/colorChange_title.js"></script>   
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="container_selfDefined">
+        <div class="logo">
+            <a href={% url 'studio.views.home' %}><img height=60 src="/static/photos/home.png"></a>
+            <br>
+            <a href={% url 'studio.views.index' %}><img height=60 src="/static/photos/index.png"></a>
+            <br>
+            <a href={% url 'register.views.sign_up' %}><img height=60 src="/static/photos/sign_up.png"></a>
+            <br>
+            <a href={% url 'upload.views.upload' %}><img height=60 src="/static/photos/upload.png"></a>
+            <br>
+            <a onclick="pageScroll()"><img height='60' src="/static/photos/top.png"></a>
+            <img height='200' src="/static/photos/2Dcode.jpg">
+        </div>
+    </div>
+</body>

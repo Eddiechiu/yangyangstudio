@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="旸旸画室">
+
+    <title>旸旸画室 主页</title>
+
+    <link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/header.css"></link>
+    <style>
+        div.title_color{
+            background-color: #159957;
+            background-image: linear-gradient(45deg, #cc6699, #6699CC);
+        }
+    </style>
+</head>
+<body>
+    {% include 'nav_index.html' %}
+    {% include 'header_index.html' %}
+    <!-- {% load comments %} -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-1"></div>
+
+            <div class="col-md-6 col-xs-10">
+                <div class="text-center">
+                    {% for photo in photos %}
+                        <hr>
+                        <h2 class="text-yahei">{{ photo.title }}</h2>
+                        <form action="/home/detail"  method="get">
+                            <input class="img-responsive" type="image" src="{{ photo.image.url }}" width="550px" value={{ photo.title }} name="photo_name">
+                        </form>
+                        <p>{{ photo.description }}</p>
+                    {% endfor %}
+                </div>
+
+                <div class="col-md-3 col-xs-1"></div>
+
+                <div class="col-md-6 col-xs-10 text-center" >
+                    <hr>
+                    <img class="img-responsive" src="/static/photos/2Dcode.jpg">
+                    <span>联系旸旸画室：carolinebreeze@sina.com</span><br>
+                    <span>欢迎你的到来~</span>
+                </div>
+
+                <div class="col-md-3 col-xs-1"></div>
+            </div>
+
+            <div class="col-md-3 col-xs-1"></div>
+        </div>    
+    </div>
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="/static/css/colorChange_title.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+body{
+  font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif;
+}
+a:link, a:hover{
+    text-decoration:none;
+}
+.text{
+    font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif;
+    color: whitesmoke;
+}
+.text-yahei{
+    font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif;
+}
+.margin-zero{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.padding-zero{
+  padding-bottom: 10%;
+  padding-top: 10%;
+}

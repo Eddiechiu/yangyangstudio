@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="旸旸画室">
+
+    <title>旸旸画室 {{ photo.title }}</title>
+
+    <link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/header.css"></link>
+    <style>
+        div.title_color{
+            background-color: #159957;
+            background-image: linear-gradient(90deg, #cc6699, #6699CC);
+    </style>
+</head>
+<body>
+    {% load comments %}
+    {% include 'nav_index.html' %}
+    {% include 'header_home.html' %}
+    <div class="container">
+        <!-- total row -->    
+        <div class="row">
+            <!-- left margin -->
+            <div class="col-md-2 col-xs-1"></div>
+            <!-- main body -->
+            <div class="col-md-8 col-xs-10">
+
+                <!-- photo and description -->
+                <div class="text-center"> 
+                    <h2 class="text-yahei">{{ photo.title }}</h2>
+                    <img src="{{ photo.image.url }}" width="500"><br>
+                    <p>{{ photo.description }}</p><br><hr>
+                </div>
+
+                <!-- comments -->
+                <div class="row">
+                    <div class="col-md-2 col-xs-1"></div>
+                    <div class="col-md-8 col-xs-10 text-center">
+                        {% render_comment_list for photo %}
+                        {% get_comment_form for photo as form%}
+                        <form action='{% comment_form_target %}' method="post">
+                            {% csrf_token %}
+                            {{ form.object_pk }}
+                            {{ form.content_type }}
+                            {{ form.timestamp }}
+                            {{ form.security_hash }}
+                            <p><label for='id_name'>用户：</label><input name="name" id="id_name">
+                            
+
+                            <label for='id_email'>邮箱：</label><input name="email" id="id_email"></p>
+                        
+
+                            <p><label for='id_comment'>评论：</label>
+                            <textarea id="id_comment" rows="4" cols="49" name="comment"></textarea></p>
+                            
+                            <p style="display:none;"><label for="id_honeypot">trickTrick</label><input type="text" name="honeypot" id="id_honeypot"></p>
+                            
+                            <p><input name="post" value="提交评论" type="submit" /></p>
+                        </form>                 
+                    </div>
+                    <div class="col-md-2 col-xs-1"></div>
+                </div>
+
+                <!-- logo -->
+                <div class="row">
+                    <div class="col-md-4 col-xs-1"></div>
+
+                    <div class="col-md-4 col-xs-10 text-center">
+                        <hr>
+                        <img class="img-responsive" src="/static/photos/2Dcode.jpg">
+                        <span>联系旸旸画室：carolinebreeze@sina.com</span><br>
+                        <span>欢迎你的到来~</span>
+                    </div>
+
+                    <div class="col-md-4 col-xs-1"></div>
+                </div>
+            </div>
+            <!-- right margin -->
+            <div class="col-md-2 col-xs-1"></div>
+        </div>    
+    </div>
+</body>
+</html>
+        

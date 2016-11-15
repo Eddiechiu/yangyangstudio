@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="旸旸画室">
+
+    <title>旸旸画室 上传</title>
+
+    <link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/header.css"></link>
+    <style>
+        div.title_color{
+            background-color: #159957;
+            background-image: linear-gradient(45deg, #cc6699, #6699CC);
+        }
+    </style>
+</head>
+<body>
+    {% include 'nav_upload.html' %}
+    {% include 'header_index.html' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-1"></div>
+
+            <div class="col-md-6 col-xs-10">
+                <div>
+                    {% if errors %}
+                            图片上传出了点小问题:
+                            <br>
+                            <ol>
+                                {% for error in errors %}
+                                    {{ error }}<br>
+                                {% endfor %}
+                            </ol>
+                    {% else %}
+                    {% endif %}
+                    <form action="" enctype="multipart/form-data" method="post">
+                        {% csrf_token %}
+                        <br>
+                        请选择要上传的图片：
+                        <input type="file" name="image_file" value="dawda"><br>
+
+                        图片标题：<br>
+                        <input type="text" class="form-control" name="title_file" placeholder="图片的标题~(必填：b)"><br>
+
+                        图片描述：<br>
+                        <textarea class="form-control" rows="4" name="text_file" placeholder="图片的描述文字~(也是必填：p)"></textarea><br>
+                        <input class="btn btn-primary btn-lg btn-block" type="submit" value="上 传 图 片">
+                    </form>
+                </div>
+
+                <div class="col-md-3 col-xs-1"></div>
+
+                <div class="col-md-6 col-xs-10 text-center" >
+                    <hr>
+                    <img class="img-responsive" src="/static/photos/2Dcode.jpg">
+                    <span>联系旸旸画室：carolinebreeze@sina.com</span><br>
+                    <span>欢迎你的到来~</span>
+                </div>
+
+                <div class="col-md-3 col-xs-1"></div>
+            </div>
+
+            <div class="col-md-3 col-xs-1">
+            </div>
+        </div>    
+    </div>
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="/static/css/colorChange_title.js"></script>
+
+</body>
+</html>

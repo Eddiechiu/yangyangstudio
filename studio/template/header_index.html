@@ -1,0 +1,20 @@
+    <div class="container text" style="margin-top: 50px">
+        <div class="jumbotron title_color text-center margin-zero">
+            <a style="color:white" href="{% url 'studio.views.home' %}">
+                <span id="title" onmouseover="mouseOver_color2gray()" onmouseout="mouseOut_color2white()">
+                    <h1 class="text" style="letter-spacing: 10px">旸旸画室</h1>
+                </span>
+            </a>
+            <blockquote class="margin-zero">
+                <p>
+                    {% block header %}
+                        {% if name %}
+                            你好，<b>{{ name }}</b>，欢迎来到旸旸画室~
+                        {% else %}
+                            欢迎来到旸旸画室,请快<a style="color:#DCD8F9" href="{% url 'register.views.sign_up' %}">登录</a>吧~
+                        {% endif %}
+                    {% endblock %}
+                </p>
+            </blockquote>
+        </div>
+    </div>
