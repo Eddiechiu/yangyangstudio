@@ -1,5 +1,5 @@
 ##Introduction
-This is the web for 旸旸画室 based on django (beta version).
+This is the web (beta version) for Yangyang Studio (旸旸画室) based on django and bootstrap.
 
 ##Function by now
 - user log
