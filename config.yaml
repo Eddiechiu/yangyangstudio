@@ -3,7 +3,7 @@ version: 13
 
 libraries:
 - name:"django"
-  version:"1.7.5"
+  version:"1.9.7"
 
 
 handlers:
