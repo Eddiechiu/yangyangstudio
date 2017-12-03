@@ -72,7 +72,7 @@ WSGI_APPLICATION = 'yangyangstudio.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 # 自己访问自己的时候，打开调试模式，并使用本地sqlite数据库
 # 否则，关闭调试模式，使用服务器的mysql
-if socket.gethostname() != 'Eddiechiu':
+if socket.gethostname() != 'DELL-EDDIE':
     import sae.const
 
     FILE_UPLOAD_MAX_MEMORY_SIZE = 10485760
