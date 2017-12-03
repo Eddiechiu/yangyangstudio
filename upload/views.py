@@ -16,7 +16,7 @@ def upload(request):
     if not request.user.is_authenticated():
         errors.append('请先登录，再上传喔')
     else:
-        user = request.user
+        user = request.user.get_username()
         image_upload = None
         if request.method == 'POST':
             try:
