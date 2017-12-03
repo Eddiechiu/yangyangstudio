@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding:utf-8 -*-
 from django.shortcuts import render_to_response
 from studio.models import Photo
 from PIL import Image
