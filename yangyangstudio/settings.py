@@ -101,7 +101,7 @@ WSGI_APPLICATION = 'yangyangstudio.wsgi.application'
 #         }
 #     }
 # else:
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = True
 DATABASES = {
     'default': {
